@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #11121a;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: #e6e6ef;
+}
+body .sidebar {
+  width: 76px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  background-color: #11121a;
+  border-right: 1px solid #42434a;
+  height: 100dvh;
+  padding: 20px 15px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  transition: 300ms ease;
+}
+body .sidebar.open {
+  width: 270px;
+}
+body .sidebar.open .flex h2 {
+  font-size: 22px;
+  opacity: 1;
+}
+body .sidebar.open .flex h2 img {
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  transform: rotate(360deg) scale(1);
+}
+body .sidebar.open .menu-items .menu-item a span {
+  opacity: 1;
+  transform: scale(1);
+}
+body .sidebar.open .contact-sidebar li a span {
+  opacity: 1;
+  transform: scale(1);
+}
+body .sidebar.open .separator {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+body .sidebar.open h4 {
+  font-size: 18px;
+  opacity: 1;
+  margin: 50px 0;
+}
+body .sidebar .flex {
+  display: flex;
+  align-items: center;
+}
+body .sidebar .flex h2 {
+  flex-grow: 1;
+  font-size: 23px;
+  font-size: 0;
+  opacity: 0;
+  transition: 300ms ease;
+}
+body .sidebar .flex h2 img {
+  width: 0x;
+  height: 0px;
+  transition: 300ms ease;
+  transform: rotate(0deg) scale(0.1);
+}
+body .sidebar .flex button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms ease;
+}
+body .sidebar .flex button i {
+  font-size: 22px;
+  padding: 10px;
+  color: #e6e6ef;
+  transition: 500ms ease;
+}
+body .sidebar .flex button i.rotate {
+  transform: rotate(180deg);
+}
+body .sidebar .flex button:hover {
+  background-color: #222533;
+}
+body .sidebar .menu-items {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .sidebar .menu-items .menu-item a {
+  color: #b0b3c1;
+  gap: 20px;
+  font-size: 16px;
+  padding: 10px;
+  transition: 300ms ease;
+}
+body .sidebar .menu-items .menu-item a i {
+  font-size: 26px;
+}
+body .sidebar .menu-items .menu-item a span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: 300ms ease;
+  transform: scale(0.5);
+}
+body .sidebar .menu-items .menu-item a:hover {
+  background-color: #222533;
+  border-radius: 8px;
+  color: #e6e6ef;
+}
+body .sidebar .menu-items .menu-item .active {
+  color: #5e63ff;
+}
+body .sidebar .separator {
+  width: 100%;
+  margin: 50px 0;
+  height: 2px;
+  background-color: #b0b3c1;
+}
+body .sidebar h4 {
+  padding: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  font-size: 0;
+  transition: 300ms ease;
+}
+body .sidebar .contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .sidebar .contact-sidebar li a {
+  padding: 10px;
+  color: #b0b3c1;
+  gap: 20px;
+  font-size: 16px;
+  transition: 300ms ease;
+}
+body .sidebar .contact-sidebar li a i {
+  font-size: 26px;
+}
+body .sidebar .contact-sidebar li a span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: 300ms ease;
+  transform: scale(0.5);
+}
+body .sidebar .contact-sidebar li a:hover {
+  background-color: #222533;
+  border-radius: 8px;
+  color: #e6e6ef;
+}
+
+main {
+  padding: 5%;
+}
+main section {
+  background-color: #11121a;
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid #42434a;
+}/*# sourceMappingURL=style.css.map */
