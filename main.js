@@ -1,19 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const sidebar = document.querySelector(".sidebar");
-	const toggleBtn = document.getElementById("toogle-btn");
-	const toggleIcon = toggleBtn.querySelector("i");
+	const toggleBtn = document.getElementById("toggle-btn");
+	const toggleBtnIcon = document.querySelector(".toggle-btn-icon");
+	const hamburgerMenu = document.querySelector(".hamburger-menu");
+	const mobileMenu = document.querySelector(".mobile-menu");
 
 	toggleBtn.addEventListener("click", () => {
 		sidebar.classList.toggle("open");
-		toggleIcon.classList.toggle("rotate");
+		toggleBtnIcon.classList.toggle("rotate");
+	});
 
-		// Aktualizacja `title` i `aria-label`
-		if (sidebar.classList.contains("open")) {
-			toggleBtn.setAttribute("title", "Close Sidebar");
-			toggleBtn.setAttribute("aria-label", "Close Sidebar");
-		} else {
-			toggleBtn.setAttribute("title", "Open Sidebar");
-			toggleBtn.setAttribute("aria-label", "Open Sidebar");
-		}
+	hamburgerMenu.addEventListener("click", () => {
+		mobileMenu.classList.toggle("show");
 	});
 });
