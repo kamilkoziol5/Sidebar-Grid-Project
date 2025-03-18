@@ -59,6 +59,7 @@ body .sidebar.open .separator {
   opacity: 0;
   width: 0;
   height: 0;
+  display: none;
 }
 body .sidebar.open h4 {
   display: block;
@@ -140,6 +141,7 @@ body .sidebar .separator {
   background-color: #b0b3c1;
 }
 body .sidebar h4 {
+  margin: 10px 0;
   padding: 10px;
   white-space: nowrap;
   display: none;
@@ -171,7 +173,9 @@ body .sidebar .contact-sidebar li a:hover {
   color: #e6e6ef;
 }
 body .mobile-menu {
-  margin-top: 31px;
+  position: fixed;
+  width: 60vw;
+  height: 100dvh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -183,8 +187,33 @@ body .mobile-menu {
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   display: none;
   border-top: 1px solid #42434a;
-  border-bottom: 1px solid #42434a;
-  box-shadow: 0 10px 15px rgba(22, 22, 22, 0.3);
+  border-right: 1px solid #42434a;
+  box-shadow: 0 0 10px rgba(65, 65, 65, 0.6);
+}
+body .mobile-menu .title-container .close-icon {
+  flex-grow: 1;
+  display: flex;
+  justify-content: end;
+}
+body .mobile-menu .title-container .close-icon button {
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: 300ms ease;
+}
+body .mobile-menu .title-container .close-icon button i {
+  font-size: 26px;
+  font-weight: 400;
+  color: #b0b3c1;
+}
+body .mobile-menu .title-container .close-icon button:hover {
+  background-color: #222533;
 }
 
 main {
@@ -221,9 +250,6 @@ main section {
   }
   body .mobile-menu {
     display: block;
-    position: fixed;
-    width: 100%;
-    top: 40px;
   }
   body .mobile-menu .flex {
     gap: 10px;
@@ -259,6 +285,5 @@ main section {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    height: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
