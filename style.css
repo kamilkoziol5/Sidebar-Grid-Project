@@ -40,8 +40,10 @@ body .sidebar.open {
 body .sidebar.open .flex h2 {
   font-size: 22px;
   opacity: 1;
+  padding-left: 10px;
 }
 body .sidebar.open .flex h2 img {
+  display: inline-block;
   width: 40px;
   height: 40px;
   margin-left: 15px;
@@ -183,7 +185,7 @@ body .sidebar .contact-sidebar li a:hover {
 }
 body .mobile-menu {
   position: fixed;
-  width: 60vw;
+  width: 200px;
   height: 100dvh;
   align-items: center;
   justify-content: center;
@@ -224,6 +226,44 @@ body .mobile-menu .title-container .close-icon button i {
 body .mobile-menu .title-container .close-icon button:hover {
   background-color: #222533;
 }
+body .mobile-menu .flex {
+  gap: 10px;
+}
+body .mobile-menu .flex h2 {
+  font-size: 18px;
+}
+body .mobile-menu .flex h2 img {
+  width: 35px;
+  height: auto;
+}
+body .mobile-menu .menu-items,
+body .mobile-menu .contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 30px 0;
+}
+body .mobile-menu .menu-items li a,
+body .mobile-menu .contact-sidebar li a {
+  padding: 5px;
+  border-radius: 4px;
+  color: #b0b3c1;
+  gap: 10px;
+}
+body .mobile-menu .menu-items li a i,
+body .mobile-menu .contact-sidebar li a i {
+  font-size: 27px;
+}
+body .mobile-menu .menu-items li a:hover,
+body .mobile-menu .contact-sidebar li a:hover {
+  background-color: #222533;
+  color: #e6e6ef;
+}
+body .mobile-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
 
 main {
   padding: 5%;
@@ -259,40 +299,5 @@ main section {
   }
   body .mobile-menu {
     display: block;
-  }
-  body .mobile-menu .flex {
-    gap: 10px;
-  }
-  body .mobile-menu .flex h2 {
-    font-size: 18px;
-  }
-  body .mobile-menu .flex h2 img {
-    width: 35px;
-    height: auto;
-  }
-  body .mobile-menu .menu-items,
-  body .mobile-menu .contact-sidebar {
-    width: -moz-max-content;
-    width: max-content;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 10px 0;
-  }
-  body .mobile-menu .menu-items li a,
-  body .mobile-menu .contact-sidebar li a {
-    padding: 5px;
-    border-radius: 4px;
-    color: #b0b3c1;
-    gap: 10px;
-  }
-  body .mobile-menu .menu-items li a:hover,
-  body .mobile-menu .contact-sidebar li a:hover {
-    background-color: #222533;
-  }
-  body .mobile-menu.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
   }
 }/*# sourceMappingURL=style.css.map */
