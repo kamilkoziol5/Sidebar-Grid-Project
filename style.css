@@ -45,7 +45,7 @@ body .sidebar.open .flex h2 img {
   width: 40px;
   height: 40px;
   margin-left: 15px;
-  transform: rotate(360deg) scale(1);
+  animation: rotateAnimation 0.4s linear;
 }
 body .sidebar.open .menu-items .menu-item a span {
   opacity: 1;
@@ -64,6 +64,14 @@ body .sidebar.open .separator {
 body .sidebar.open h4 {
   display: block;
 }
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 body .sidebar .flex {
   display: flex;
   align-items: center;
@@ -79,7 +87,6 @@ body .sidebar .flex h2 img {
   width: 0x;
   height: 0px;
   transition: 300ms ease;
-  transform: rotate(0deg) scale(0.1);
 }
 body .sidebar .flex button {
   cursor: pointer;

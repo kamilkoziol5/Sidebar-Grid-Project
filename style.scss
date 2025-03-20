@@ -50,10 +50,8 @@ body {
 					width: 40px;
 					height: 40px;
 					margin-left: 15px;
-					transform: rotate(360deg) scale(1);
-					-webkit-transform: rotate(45deg);
-					will-change: transform;
-					backface-visibility: hidden;
+					animation: rotateAnimation 0.4s linear;
+					// -webkit-animation: rotateAnimation 0.4s linear;
 				}
 			}
 			.menu-items .menu-item a span {
@@ -77,6 +75,14 @@ body {
 				display: block;
 			}
 		}
+		@keyframes rotateAnimation {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
 
 		.flex {
 			display: flex;
@@ -93,7 +99,6 @@ body {
 					width: 0x;
 					height: 0px;
 					transition: 300ms ease;
-					transform: rotate(0deg) scale(0.1);
 				}
 			}
 
