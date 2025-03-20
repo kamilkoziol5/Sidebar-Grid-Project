@@ -51,6 +51,9 @@ body {
 					height: 40px;
 					margin-left: 15px;
 					transform: rotate(360deg) scale(1);
+					-webkit-transform: rotate(45deg);
+					will-change: transform;
+					backface-visibility: hidden;
 				}
 			}
 			.menu-items .menu-item a span {
