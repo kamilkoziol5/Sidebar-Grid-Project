@@ -29,7 +29,6 @@ body {
 	.sidebar {
 		width: 56px;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-		overflow: hidden;
 		background-color: $base-clr;
 		border-right: 1px solid $line-clr;
 		height: 100dvh;
@@ -41,6 +40,10 @@ body {
 
 		&.open {
 			width: 220px;
+
+			.tooltip {
+				display: none !important;
+			}
 
 			.flex h2 {
 				font-size: 22px;
@@ -57,12 +60,12 @@ body {
 					contain: paint;
 				}
 			}
-			.menu-items .menu-item a span {
+			.menu-items .menu-item a .title-item {
 				opacity: 1;
 				transform: scale(1);
 			}
 
-			.contact-sidebar li a span {
+			.contact-sidebar li a .title-item {
 				opacity: 1;
 				transform: scale(1);
 			}
@@ -140,6 +143,8 @@ body {
 			gap: 10px;
 
 			.menu-item {
+				position: relative;
+
 				a {
 					color: $secondary-text-clr;
 					gap: 20px;
@@ -151,23 +156,38 @@ body {
 						font-size: 26px;
 					}
 
-					span {
+					.title-item {
 						white-space: nowrap;
 						opacity: 0;
 						transition: 300ms ease;
 						transform: scale(0.5);
 					}
 
+					.tooltip {
+						background-color: $base-clr;
+						padding: 10px;
+						border: 1px solid $line-clr;
+						position: absolute;
+						left: calc(100% + 25px);
+						color: $text-clr;
+						opacity: 0;
+						width: max-content;
+						transform: translateY(50px);
+					}
+
 					&:hover {
 						background-color: $hover-clr;
 						border-radius: 8px;
 						color: $text-clr;
+
+						.tooltip {
+							opacity: 1;
+							transform: translateY(0);
+						}
 					}
 				}
 
-				.active {
-					color: $accent-clr;
-				}
+				
 			}
 		}
 
@@ -201,17 +221,34 @@ body {
 					font-size: 26px;
 				}
 
-				span {
+				.title-item {
 					white-space: nowrap;
 					opacity: 0;
 					transition: 300ms ease;
 					transform: scale(0.5);
 				}
 
+				.tooltip {
+					background-color: $base-clr;
+					padding: 10px;
+					border: 1px solid $line-clr;
+					position: absolute;
+					left: calc(100% + 25px);
+					color: $text-clr;
+					opacity: 0;
+					width: max-content;
+					transform: translateY(50px);
+				}
+
 				&:hover {
 					background-color: $hover-clr;
 					border-radius: 8px;
 					color: $text-clr;
+
+					.tooltip {
+						opacity: 1;
+						transform: translateY(0);
+					}
 				}
 			}
 		}

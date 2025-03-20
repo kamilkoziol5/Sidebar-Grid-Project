@@ -24,7 +24,6 @@ body .hamburger-menu {
 body .sidebar {
   width: 56px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
   background-color: #11121a;
   border-right: 1px solid #42434a;
   height: 100dvh;
@@ -36,6 +35,9 @@ body .sidebar {
 }
 body .sidebar.open {
   width: 220px;
+}
+body .sidebar.open .tooltip {
+  display: none !important;
 }
 body .sidebar.open .flex h2 {
   font-size: 22px;
@@ -51,11 +53,11 @@ body .sidebar.open .flex h2 img {
   -webkit-animation: rotateAnimation 0.4s linear;
   contain: paint;
 }
-body .sidebar.open .menu-items .menu-item a span {
+body .sidebar.open .menu-items .menu-item a .title-item {
   opacity: 1;
   transform: scale(1);
 }
-body .sidebar.open .contact-sidebar li a span {
+body .sidebar.open .contact-sidebar li a .title-item {
   opacity: 1;
   transform: scale(1);
 }
@@ -121,6 +123,9 @@ body .sidebar .menu-items {
   flex-direction: column;
   gap: 10px;
 }
+body .sidebar .menu-items .menu-item {
+  position: relative;
+}
 body .sidebar .menu-items .menu-item a {
   color: #b0b3c1;
   gap: 20px;
@@ -131,19 +136,32 @@ body .sidebar .menu-items .menu-item a {
 body .sidebar .menu-items .menu-item a i {
   font-size: 26px;
 }
-body .sidebar .menu-items .menu-item a span {
+body .sidebar .menu-items .menu-item a .title-item {
   white-space: nowrap;
   opacity: 0;
   transition: 300ms ease;
   transform: scale(0.5);
+}
+body .sidebar .menu-items .menu-item a .tooltip {
+  background-color: #11121a;
+  padding: 10px;
+  border: 1px solid #42434a;
+  position: absolute;
+  left: calc(100% + 25px);
+  color: #e6e6ef;
+  opacity: 0;
+  width: -moz-max-content;
+  width: max-content;
+  transform: translateY(50px);
 }
 body .sidebar .menu-items .menu-item a:hover {
   background-color: #222533;
   border-radius: 8px;
   color: #e6e6ef;
 }
-body .sidebar .menu-items .menu-item .active {
-  color: #5e63ff;
+body .sidebar .menu-items .menu-item a:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 body .sidebar .separator {
   width: 100%;
@@ -172,16 +190,32 @@ body .sidebar .contact-sidebar li a {
 body .sidebar .contact-sidebar li a i {
   font-size: 26px;
 }
-body .sidebar .contact-sidebar li a span {
+body .sidebar .contact-sidebar li a .title-item {
   white-space: nowrap;
   opacity: 0;
   transition: 300ms ease;
   transform: scale(0.5);
 }
+body .sidebar .contact-sidebar li a .tooltip {
+  background-color: #11121a;
+  padding: 10px;
+  border: 1px solid #42434a;
+  position: absolute;
+  left: calc(100% + 25px);
+  color: #e6e6ef;
+  opacity: 0;
+  width: -moz-max-content;
+  width: max-content;
+  transform: translateY(50px);
+}
 body .sidebar .contact-sidebar li a:hover {
   background-color: #222533;
   border-radius: 8px;
   color: #e6e6ef;
+}
+body .sidebar .contact-sidebar li a:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 body .mobile-menu {
   position: fixed;
