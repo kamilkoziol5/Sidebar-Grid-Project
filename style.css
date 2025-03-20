@@ -46,6 +46,8 @@ body .sidebar.open .flex h2 img {
   height: 40px;
   margin-left: 15px;
   animation: rotateAnimation 0.4s linear;
+  -webkit-animation: rotateAnimation 0.4s linear;
+  contain: paint;
 }
 body .sidebar.open .menu-items .menu-item a span {
   opacity: 1;
