@@ -23,6 +23,7 @@ body .hamburger-menu {
 }
 body .sidebar {
   width: 56px;
+  overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   background-color: #11121a;
   border-right: 1px solid #42434a;
@@ -32,6 +33,9 @@ body .sidebar {
   top: 0;
   left: 0;
   transition: 300ms ease;
+}
+body .sidebar:hover {
+  overflow: visible;
 }
 body .sidebar.open {
   width: 220px;
@@ -152,7 +156,6 @@ body .sidebar .menu-items .menu-item a .tooltip {
   opacity: 0;
   width: -moz-max-content;
   width: max-content;
-  transform: translateY(50px);
 }
 body .sidebar .menu-items .menu-item a:hover {
   background-color: #222533;
@@ -161,7 +164,6 @@ body .sidebar .menu-items .menu-item a:hover {
 }
 body .sidebar .menu-items .menu-item a:hover .tooltip {
   opacity: 1;
-  transform: translateY(0);
 }
 body .sidebar .separator {
   width: 100%;

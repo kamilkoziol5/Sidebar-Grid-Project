@@ -28,6 +28,7 @@ body {
 	// Base Sidebar
 	.sidebar {
 		width: 56px;
+		overflow: hidden;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 		background-color: $base-clr;
 		border-right: 1px solid $line-clr;
@@ -37,6 +38,10 @@ body {
 		top: 0;
 		left: 0;
 		transition: 300ms ease;
+
+		&:hover {
+			overflow: visible;
+		}
 
 		&.open {
 			width: 220px;
@@ -172,7 +177,6 @@ body {
 						color: $text-clr;
 						opacity: 0;
 						width: max-content;
-						transform: translateY(50px);
 					}
 
 					&:hover {
@@ -182,12 +186,9 @@ body {
 
 						.tooltip {
 							opacity: 1;
-							transform: translateY(0);
 						}
 					}
 				}
-
-				
 			}
 		}
 
