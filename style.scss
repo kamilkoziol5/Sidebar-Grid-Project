@@ -27,8 +27,8 @@ body {
 
 	// Base Sidebar
 	.sidebar {
+		position: relative;
 		width: 56px;
-		overflow: hidden;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 		background-color: $base-clr;
 		border-right: 1px solid $line-clr;
@@ -39,76 +39,22 @@ body {
 		left: 0;
 		transition: 300ms ease;
 
-		&:hover {
-			overflow: visible;
-		}
-
-		&.open {
-			width: 220px;
-
-			.tooltip {
-				display: none !important;
-			}
-
-			.flex h2 {
-				font-size: 22px;
-				opacity: 1;
-				padding-left: 10px;
-
-				img {
-					display: inline-block;
-					width: 40px;
-					height: 40px;
-					margin-left: 15px;
-					animation: rotateAnimation 0.4s linear;
-					-webkit-animation: rotateAnimation 0.4s linear;
-					contain: paint;
-				}
-			}
-			.menu-items .menu-item a .title-item {
-				opacity: 1;
-				transform: scale(1);
-			}
-
-			.contact-sidebar li a .title-item {
-				opacity: 1;
-				transform: scale(1);
-			}
-
-			.separator {
-				opacity: 0;
-				width: 0;
-				height: 0;
-				display: none;
-			}
-
-			h4 {
-				display: block;
-			}
-		}
-		@keyframes rotateAnimation {
-			from {
-				transform: rotate(0deg);
-			}
-			to {
-				transform: rotate(360deg);
-			}
-		}
-
 		.flex {
 			display: flex;
 			align-items: center;
 
 			h2 {
 				flex-grow: 1;
-				font-size: 23px;
-				font-size: 0;
+				transform: scale(0);
+
 				opacity: 0;
 				transition: 300ms ease;
 
 				img {
-					width: 0x;
-					height: 0px;
+					width: 40px;
+					height: 40px;
+					transform: scale(0);
+					display: none;
 					transition: 300ms ease;
 				}
 			}
@@ -123,6 +69,8 @@ body {
 				align-items: center;
 				justify-content: center;
 				transition: 300ms ease;
+				position: absolute;
+				right: 5px;
 
 				.toggle-btn-icon {
 					font-size: 22px;
@@ -162,6 +110,7 @@ body {
 					}
 
 					.title-item {
+						pointer-events: none;
 						white-space: nowrap;
 						opacity: 0;
 						transition: 300ms ease;
@@ -169,6 +118,7 @@ body {
 					}
 
 					.tooltip {
+						pointer-events: none;
 						background-color: $base-clr;
 						padding: 10px;
 						border: 1px solid $line-clr;
@@ -193,20 +143,25 @@ body {
 		}
 
 		.separator {
+			margin: 40px 0;
 			width: 100%;
-			margin: 20px 0;
 			height: 2px;
 			background-color: $secondary-text-clr;
 		}
 
 		h4 {
-			margin: 10px 0;
 			padding: 10px;
 			white-space: nowrap;
-			display: none;
+			position: absolute;
+			top: -50px;
+			opacity: 0;
+			pointer-events: none;
+			transform: scale(0) translateX(-200px);
+			transition: 300ms ease;
 		}
 
 		.contact-sidebar {
+			position: relative;
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
@@ -251,6 +206,49 @@ body {
 						transform: translateY(0);
 					}
 				}
+			}
+		}
+
+		&.open {
+			width: 220px;
+
+			.tooltip {
+				display: none !important;
+			}
+
+			.flex h2 {
+				opacity: 1;
+				transform: scale(1);
+				padding-left: 10px;
+
+				img {
+					display: inline-block;
+					margin-left: 15px;
+					transform: scale(1);
+				}
+			}
+			.menu-items .menu-item a .title-item {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			.contact-sidebar li a .title-item {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			.separator {
+				opacity: 0;
+				width: 0;
+				height: 0;
+				display: none;
+			}
+
+			h4 {
+				margin: 15px 0;
+				position: static;
+				opacity: 1;
+				transform: scale(1);
 			}
 		}
 	}
